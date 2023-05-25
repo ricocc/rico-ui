@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Loading...</title>
+</head>
+<body>
+    <style>
+        html {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        }
+        *,
+        *:before,
+        *:after {
+        -webkit-box-sizing: inherit;
+        -moz-box-sizing: inherit;
+        box-sizing: inherit;
+        }
+        body {
+        margin: 0;
+        padding: 0;
+        }
+        .pre-loader{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            z-index: 99998;
+            background-color: #f6f7f9;
+        }
+        .pre-loader-content{
+            position: relative;
+            z-index: 99999;
+        }
+        .pre-loader-ani{
+            margin:0 auto;
+            padding:0;
+            display: block;
+            margin-top:-48px;
+        }
+        .pre-loader p{
+            font-size: 17px;
+            text-align: center;
+            margin-top:16px;
+            letter-spacing: 1px;
+            color: #808080;
+        }
+        /* animation */
+        .line-spinner {
+            width: 72px;
+            height: 72px;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            border-right: 2px solid #0f6fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .dotting {
+            display: inline-block; min-width: 2px; min-height:2px;
+            border-radius: 1px;
+            box-shadow: 2px 0 currentColor, 6px 0 currentColor, 10px 0 currentColor; 
+            -webkit-animation: dot 4s infinite step-start both;
+            animation: dot 4s infinite step-start both;
+        }
+        .dotting:before { content: '...'; } /* IE8 */
+        .dotting::before { content: ''; }
+        :root .dotting { margin-right: 8px; } /* IE9+,FF,CH,OP,SF */
+        @-webkit-keyframes dot {
+            25% { box-shadow: none; }
+            50% { box-shadow: 2px 0 currentColor; }
+            75% { box-shadow: 2px 0 currentColor, 6px 0 currentColor; }
+        }
+        @keyframes dot {
+            25% { box-shadow: none; }
+            50% { box-shadow: 2px 0 currentColor; }
+            75% { box-shadow: 2px 0 currentColor, 6px 0 currentColor; }
+        }
+
+    </style>
+    <div class="pre-loader">
+        <div class="pre-loader-content">
+            <div class="line-spinner pre-loader-ani"></div>
+            <p>
+                Loading<span class="dotting"></span>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Loading...</title>
+</head>
+<body>
+    <style>
+        html {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        }
+        *,
+        *:before,
+        *:after {
+        -webkit-box-sizing: inherit;
+        -moz-box-sizing: inherit;
+        box-sizing: inherit;
+        }
+        body {
+        margin: 0;
+        padding: 0;
+        }
+        .pre-loader{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            z-index: 99998;
+            background-color: #f6f7f9;
+        }
+        .pre-loader-content{
+            position: relative;
+            z-index: 99999;
+        }
+        .pre-loader-ani{
+            margin:0 auto;
+            padding:0;
+            display: block;
+            margin-top:-48px;
+        }
+        .pre-loader p{
+            font-size: 20px;
+            text-align: center;
+            margin-top:16px;
+            letter-spacing: 1px;
+            color: #808080;
+        }
+        /* animation */
+        .loader01 {
+            width: 72px;
+            height: 72px;
+            border: 3px solid rgb(255,132,132,.25);
+            border-right: 3px solid #ff6e83;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        .loader02{
+            width: 72px;
+            height:72px;
+            background: linear-gradient(180deg, #0f6fff 0%, rgba(0, 0, 0, 0.1) 25%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: spin 1s linear infinite;
+        }
+        .loader02::after {
+            content: "";
+            width: calc(100% - 4px);
+            height: calc(100% - 4px);
+            border-radius: 50%;
+            background: #ffffff42;
+        }
+
+        .loader03 {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            position: relative;
+        }
+        .loader03::after,
+        .loader03::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: 50%;
+            border: 2px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .loader03::before {
+            border-right: 2px solid #0f6fff;
+            animation: spin 1s 1s linear infinite;
+        }
+
+        .loader03::after {
+            border-bottom: 2px solid #ff5954;
+            /*   animation: spin 1s 0.15s ease-in-out infinite; */
+            animation: spin 1s 0.3s cubic-bezier(0.46, 0.03, 0.52, 0.96) infinite;
+            }
+
+            @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loader04 {
+            width: 240px;
+            height: 4px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .loader04::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: #0f6fff;
+            animation: grow 1s ease-in-out infinite;
+        }
+
+         @keyframes grow {
+            50% {
+                width: 100%;
+            }
+            100% {
+                width: 0;
+                right: 0;
+                left: unset;
+            }
+        }
+        .loader05 {
+            width: 64px;
+            height: 64px;
+            border: 3px solid #a0a0a0;
+            border-bottom-color: transparent;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            -webkit-animation: rotation 1s linear infinite;
+                    animation: rotation 1s linear infinite;
+        }
+        .loader05:after {
+            content: "";
+            position: absolute;
+            left: 35px;
+            top: 43px;
+            border: 10px solid transparent;
+            border-right-color: #a0a0a0;
+            transform: rotate(-40deg);
+        }
+        @-webkit-keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+            }
+            @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .loader06 {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            position: relative;
+            color: #88a5ff;
+            -webkit-animation: animloader06 1s linear infinite alternate;
+                    animation: animloader06 1s linear infinite alternate;
+            }
+
+        @-webkit-keyframes animloader06 {
+            0% {
+                box-shadow: -38px -12px, -14px 0, 14px 0, 38px 0;
+            }
+            33% {
+                box-shadow: -38px 0px, -14px -12px, 14px 0, 38px 0;
+            }
+            66% {
+                box-shadow: -38px 0px, -14px 0, 14px -12px, 38px 0;
+            }
+            100% {
+                box-shadow: -38px 0, -14px 0, 14px 0, 38px -12px;
+            }
+            }
+            @keyframes animloader06 {
+            0% {
+                box-shadow: -38px -12px, -14px 0, 14px 0, 38px 0;
+            }
+            33% {
+                box-shadow: -38px 0px, -14px -12px, 14px 0, 38px 0;
+            }
+            66% {
+                box-shadow: -38px 0px, -14px 0, 14px -12px, 38px 0;
+            }
+            100% {
+                box-shadow: -38px 0, -14px 0, 14px 0, 38px -12px;
+            }
+            }
+
+        /* dot */
+        .dotting {
+            display: inline-block; min-width: 2px; min-height:2px;
+            border-radius: 1px;
+            box-shadow: 2px 0 currentColor, 6px 0 currentColor, 10px 0 currentColor; 
+            -webkit-animation: dot 4s infinite step-start both;
+            animation: dot 4s infinite step-start both;
+        }
+        .dotting:before { content: '...'; } /* IE8 */
+        .dotting::before { content: ''; }
+        :root .dotting { margin-right: 8px; } /* IE9+,FF,CH,OP,SF */
+        @-webkit-keyframes dot {
+            25% { box-shadow: none; }
+            50% { box-shadow: 2px 0 currentColor; }
+            75% { box-shadow: 2px 0 currentColor, 6px 0 currentColor; }
+        }
+        @keyframes dot {
+            25% { box-shadow: none; }
+            50% { box-shadow: 2px 0 currentColor; }
+            75% { box-shadow: 2px 0 currentColor, 6px 0 currentColor; }
+        }
+
+    </style>
+    
+    <div class="pre-loader" id="loaderbg">
+        <div class="pre-loader-content">
+            <div class=" pre-loader-ani" id="loader-ani"></div>
+            <p>
+                Loading<span class="dotting"></span>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        var arr = ['loader01', 'loader02', 'loader03', 'loader04','loader05', 'loader06']
+        var index = Math.floor((Math.random()*arr.length))
+        document.getElementById("loader-ani").classList.add(arr[index]);
+        var bgarr = ['#f6f7f9','#fff','#181818','#31343e']
+        var bgindex = Math.floor((Math.random()*bgarr.length))
+        document.getElementById("loaderbg").style.backgroundColor=bgarr[bgindex];
+    </script>
+</body>
+</html>

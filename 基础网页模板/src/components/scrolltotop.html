@@ -1,0 +1,113 @@
+<!-- Scroll to top -->
+<div class="toTop " id="backtotop" onclick="toTop();" style="display:none;">
+    <svg width="18" height="24" viewBox="0 0 18 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_1177_534)">
+        <path d="M0.604548 10.3329C0.995073 10.7235 1.62824 10.7235 2.01876 10.3329L7.85165 4.50003L7.85165 22.7943C7.85165 23.3466 8.29937 23.7943 8.85165 23.7943H8.89171C9.444 23.7943 9.89171 23.3466 9.89171 22.7943L9.89171 4.50003L15.7246 10.3329C16.1151 10.7235 16.7483 10.7235 17.1388 10.3329L17.1646 10.3072C17.5551 9.91664 17.5551 9.28347 17.1646 8.89294L10.3117 2.04007L9.57877 1.30714C9.18824 0.916603 8.55506 0.916612 8.16454 1.30715L7.43166 2.04007L0.578783 8.89295C0.188258 9.28347 0.188258 9.91664 0.578783 10.3072L0.604548 10.3329Z" fill="#ffffff"/>
+        </g>
+        <defs>
+        <clipPath id="clip0_1177_534">
+        <rect width="18" height="24" fill="white"/>
+        </clipPath>
+        </defs>
+    </svg>
+</div>
+<script>
+    function toTop() {
+        window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+        })
+    }
+    $(document).ready(function() {
+        window.onscroll = function() {
+        var ToScroll = document.getElementsByClassName('toTop')
+        var scrollHeight = document.documentElement.scrollTop
+        if (scrollHeight > 250) {
+            ToScroll[0].style.display = 'block'
+        } else {
+            ToScroll[0].style.display = 'none'
+        }
+        }
+    });
+</script>
+
+
+
+<style>
+    
+/*------------------------------------------------------------------
+ # Scroll to top
+-------------------------------------------------------------------*/
+.toTop {
+  position: fixed;
+  bottom: 90px;
+  right: 48px;
+  right: 5%;
+  z-index: 9999;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background: #222;
+  text-align: center;
+  border-radius: var(--rounded-normal);
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.toTop:hover {
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+}
+
+.toTop svg {
+  vertical-align: text-bottom;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+@media (max-width: 1600px) {
+  .toTop {
+    right: 48px;
+  }
+}
+@media (max-width: 1367px) {
+  .toTop {
+    right: 36px;
+  }
+}
+@media (max-width: 1023px) {
+  .toTop {
+    right: 24px;
+  }
+}
+@media (max-width: 576px) {
+  .toTop {
+    bottom: 60px;
+    left: unset;
+    right: 8px;
+  }
+}
+@media (min-width: 2080px) {
+  .toTop {
+    left: 5%;
+    width: 3.5vw;
+    height: 3.5vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 25%;
+  }
+  .toTop svg {
+    height: 2vw;
+    width: 2vw;
+    margin-top: 0.72vw;
+  }
+}
+</style>

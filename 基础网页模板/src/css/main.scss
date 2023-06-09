@@ -1,0 +1,24 @@
+/*!------------------------------------------------------------------
+[MAIN STYLESHEET]
+PROJECT:	Rico - Personal Blog Template
+VERSION:	v1.0
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[TABLE OF CONTENTS]
+-------------------------------------------------------------------*/
+@import 'reset';
+@import 'mixins';
+@import 'variables';
+@import 'typography';
+@import 'common';
+/*------------------------------------------------------------------
+ # preloader style
+-------------------------------------------------------------------*/
+
+.section-divider{
+    width: 100%;
+    height: 1px;
+    border: none;
+    background-color: var(--color-divider);
+    margin: var(--size-top, 64px) 0 var(--size-bottom, 64px);
+}
